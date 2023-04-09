@@ -1,7 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
+import { Button } from '@mui/material';
+import { ThemeContext } from '../context/ThemeContext';
+import { useContext } from 'react';
+import Brightness2Icon from '@mui/icons-material/Brightness2';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
 const Header = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext)
+
   return (
     <header className="bg-white dark:bg-slate-800 text-white">
       <nav className="flex justify-between container mx-auto py-4">
@@ -29,6 +36,11 @@ const Header = () => {
             <Link href="/contact" className="text-slate-900 dark:text-white hover:text-gray-400">
               Contact
             </Link>
+          </li>
+          <li>
+            <Button onClick={toggleTheme} className="text-slate-900 dark:text-white hover:text-gray-400">
+            {theme === 'dark' ? <Brightness7Icon /> : <Brightness2Icon />}
+            </Button>
           </li>
         </ul>
       </nav>
