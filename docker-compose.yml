@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-  portions-app-frontend:
-    image: marvin-portfolio
-    container_name: marvin-portfolio
+  portfolio:
+    image: portfolio
+    container_name: portfolio
     environment:
       - NODE_ENV=${NODE_ENV}
     build:
